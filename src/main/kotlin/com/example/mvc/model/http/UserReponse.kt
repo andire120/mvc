@@ -4,12 +4,12 @@ import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.databind.annotation.JsonNaming
 
-data class UserReponse (
+data class UserResponse (
     var result:Result?=null,
     var description:String?=null,
 
     @JsonProperty("user")
-    var userRequest: List<UserRequest>?=null
+    var userRequest: MutableList<UserRequest>?=null
 )
 
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)

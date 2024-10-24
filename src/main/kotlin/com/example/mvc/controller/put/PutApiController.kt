@@ -1,7 +1,7 @@
 package com.example.mvc.controller.put
 
 import com.example.mvc.model.http.Result
-import com.example.mvc.model.http.UserReponse
+import com.example.mvc.model.http.UserResponse
 import com.example.mvc.model.http.UserRequest
 import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -24,9 +24,9 @@ class PutApiController {
     }
 
     @PutMapping(path = ["/put-mapping/object"])
-    fun putMappingObject(@RequestBody userRequest: UserRequest): UserRequest {
+    fun putMappingObject(@RequestBody userRequest: UserRequest): UserResponse {
         //0. Response
-        UserReponse().apply {
+        return UserResponse().apply {
             // 1. result
             this.result = Result().apply {
                 this.resultCode = "OK"
@@ -58,10 +58,5 @@ class PutApiController {
 
             this.userRequest = userList
         }
-
-        return userRequest
     }
-
-
-
 }
